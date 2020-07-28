@@ -13,9 +13,43 @@ public class StudentRep implements StudentsRepository {
 
 	@Override
 	public List<Student> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+	ArrayList<Student> list = new ArrayList<>();
+	Statement st = null;
+	ResultSet rs = null;
+	try {
+		st = connection.createStatement();
+		rs = st.executeQuery("select * from student left join on student.mentor_id = mentor.id");
+		if(rs.next()) {
+			list.addLast( new Student(
+					rs.getLong("id"),
+					rs.getString("firstName"),
+					rs.getString("lastname"),
+					rs.getInt("age"),
+					rs.getInt("groupNumber")
+					));
+			
+		}else return null;
+		
+	} catch (SQLException e) {
+		throw new IllegalArgumentException(e);
+	} finally {
+		if(rs != null) {
+		try {
+			rs.close();
+		} catch (SQLException e) {}
+		}
+		if(st != null) {
+			try {
+				st.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
+		return list;
+	}
+
 
 	@Override
 	public Student findById(Long id) {
