@@ -1,0 +1,541 @@
+import math
+import random
+from fractions import Fraction as frac
+
+
+
+def tuple_add(a,b):
+    return (a+b,a*b)
+
+for i in range(999,4249):
+    if i%5 == 0 and i%3 != 0:
+     print(i)
+
+
+
+
+def sqrt(x,y):
+    return math.sqrt(x + math.sqrt(y))
+
+def check_num(num):
+    if num in range(3,7):
+        return num-13
+    elif num in range(8,42):
+        return num-50
+    elif num <= 0 or num >= 2000:
+        return num*4
+    else:
+        return 0
+
+def convertor(num):
+    return 9/5*num + 32
+
+def percent_calculator(amt,per):
+    return amt*(1 + per/100)**5
+
+def function7(week,month,year):
+    return week*7 + month*30 + year*365
+
+def function8(num):
+    for i in range(2, num + 1):
+        if (num % i == 0):
+            isprime = 1
+            for j in range(2, (i // 2 + 1)):
+                if (i % j == 0):
+                    isprime = 0
+                    break
+            if isprime == 1:
+              return [i]
+
+
+def function9(num):
+    return [i for i in range(num) if i%num == 0]
+
+
+
+
+
+def function11(num):
+    return [i**2 for i in range(num)]
+
+
+def function12(list,slice):
+    return sum(list[slice[0]:slice[1]+1])
+
+
+def function13(a,b):
+    return [b for i in range(1,a+1)]
+
+
+def function14(list,num):
+    return [i for i in list if i is not num]
+
+def function15(c):
+    n = c
+    sd = 9
+    ld = 0
+    while n > 0:
+        r = n % 10
+        if sd > r:
+            sd = r
+        if ld < r:
+            ld = r
+        n = int(n / 10)
+    return int(str(c).replace(str(sd),"?").replace(str(ld),str(sd)).replace("?",str(ld)))
+
+
+print(function15(123745))
+
+def func16 (a):
+    x = [int(x) for x in str(a)]
+    if sorted(x)==x:
+        return True
+    else:return False
+print(func16(182345))
+
+def func17(a):
+
+    b= list(reversed(a))
+    print(b)
+    z=True
+    if a!=b:
+        return False
+    return z
+print(func17([9,8,6,6,8,9]))
+
+def func18 (a,*args):
+    k = a.split(' ')
+    print(k)
+    for i in args:
+        for j in k:
+            for l in range(len(j)):
+                if (j[l] == i):
+                    del k[k.index(j)]
+    return k
+print(func18("In the hole in the ground there lived a hobbit", 't', 'h', 'r'))
+
+def func19 (a):
+    s = a.split('.')
+    if len(s) != 4:
+        return False
+    for x in s:
+        if not x.isdigit():
+            return False
+        i = int(x)
+        if i < 0 or i > 255:
+            return False
+    return True
+print(func19("127.0.0.280"))
+
+def func20 (a):
+    return [int(s) for s in a.split() if s.isdigit()]
+print(func20( "ab = 2 + 278"))
+
+def func21 (*args):
+    even_count, odd_count , even_total ,odd_total= 0, 0,0,0
+    for num in args:
+        if num % 2 == 0:
+            even_count +=1
+            even_total+=num
+        else:
+            odd_count +=1
+            odd_total +=1
+    x=[(odd_total/odd_count),(even_total/even_count)]
+    return x
+print(func21(6, 1, 2, 1))
+
+def func22 (a):
+    indices = [ i for i, x in enumerate (a) if x!=0 ]
+    return indices
+print(func22([1,2,5,0,0,4,0]))
+
+def func23 (a,b):
+    x=min(a,key=lambda x:abs(x-b))
+    return x
+print(func23([1,2,3,4,5,6],5.2))
+
+def func24 (a):  ##AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    vowels = "aeiouAEIOUаиоуыэяёюеАОУЫЭЯЁЮИЕ"
+    pos=0
+    #indices = [ i for i, x in enumerate (a) if x in vowels ]
+    li=list(a)
+    print(li)
+    for i in range(len(li)):
+        if li[i] in vowels:
+            li.insert(i+1,"c")
+    a="".join(li)
+    return a
+print(func24("привет, как дела"))
+
+def func25 (a):
+    a.sort(reverse=True)
+    x=(a[:3])
+    return x
+print(func25([1,5,7,3,4,2,9,1,2]))
+
+def func26(a):
+    a_set=set(a)
+    if len(a_set) != len(a):
+        return True
+    else:
+        return False
+print(func26([1,2,3,1]))
+
+def func27 (a):
+    ten_percent=(10*max(a))/100
+    total=[]
+    for i in range(len(a)):
+        if a[i] >= max(a)-ten_percent:
+            total.append(a[i])
+    return total
+print(func27([50,40,71,100,95,97,96]))
+
+def func28 (a,b,c):
+    for i in range(len(a)):
+        if a[i] in range(b,c):
+            a[i] *= -1
+    return a
+print(func28([1,5,-7,13,-1],2,11))
+
+def func29 (a,b):
+    if a == b :
+        return True
+    else:
+        return False
+print(func29([1,2,4], [1,1,4]))
+
+def func30 (a):
+    x=[]
+    for i in range(len(a)):
+        if a[i] != 0:
+            x.append(a[i])
+    for i in range(len(a)-len(x)):
+        x.append(0)
+    return x
+print(func30([4,0,5,0,3,0,0,5]))
+
+def func31 (a):
+    x=[]
+    for i in range(len(a)):
+        if i % 2:
+            x.append(a[i])
+    return x
+print(func31([1,2,8,8,5,10,11,0,-1]))
+
+def func32 (a):
+    res = sorted(range(len(a)), key=lambda sub: a[sub])[-2:]
+    a.sort(reverse=True)
+    x = (a[:2])
+    return res,x
+print(func32([1,2,8,8,5,10,11,0,-1]))
+
+def func33 (a):
+    flag=max(a)
+    x=max(a)
+    for i in range(len(a)):
+        if flag - a[i] < x and flag - a[i] != 0:
+            x = flag - a[i]
+    return x
+print(func33([0,6,1,-1,4,1,-1,0]))
+
+def func34 (a):
+    moths = {
+        1 : "Январь",
+        2 : "Февраль" ,
+        3 : "Март",
+        4 : "Апрель",
+        5 : "Май" ,
+        6 : "Июнь",
+        7 : "Июль",
+        8 : "Август",
+        9 : "Сентябрь",
+        10 :  "Октябрь",
+        11 : "Ноябрь",
+        12 : "Декабрь"
+    }
+    return moths.get(a)
+print(func34(2))
+
+def func35(a):
+    seasons = {
+        1: "Зима",
+        2: "Зима",
+        3: "Весна",
+        4: "Весна",
+        5: "Весна",
+        6: "Лето",
+        7: "Лето",
+        8: "Лето",
+        9: "Осень",
+        10: "Осень",
+        11: "Осень",
+        12: "Зима"
+    }
+    return seasons.get(a)
+print(func35(2))
+
+
+def func36(a,b):
+    dic= dict(zip(a,b))
+    return dic
+print(func36([1,2,3,4] , ['a', 'b', 'c', 'd']))
+
+def func37(a):
+    flip = {}
+    x = {}
+    for key , value in a.items():
+        if value not in flip:
+            flip[value] = [key]
+        else:
+            flip[value].append(key)
+    return flip
+print(func37({1: 'a', 2: 'a', 3: 'a', 4: 'd'}))
+
+def func38 (a):
+    flip = {}
+    for key, value in a.items():
+        if value not in flip:
+            flip[value] = [key]
+    return flip
+print(func38({1: 'a', 2: 'b', 3: 'c', 4: 'd'}))
+
+def func39 (a,b):
+    aset=set(a)
+    blist=list(b)
+    for name in aset.intersection(b):
+        for i in range(1,len(blist)):
+            a[name]= a[name],blist[i]
+    return a
+print(func39({1: 'a', 2: 'b', 3: 'c'} , { 1 , 'ff'}))
+
+def printmat (x,a,b):
+    flag = 0
+    flag2 = a
+    flat = [item for sublist in x for item in sublist]
+    for i in range(b):
+        print(flat[flag:flag2])
+        flag = flag2
+        flag2 += a
+    print("---------------------------")
+    return 0
+
+def func40 (n):
+    d = {}
+    for i in range(1,n+1):
+        d[i]=i*i
+    return d
+print(func40(6))
+
+def func41 (a,b):
+    l1=[]
+    for i in range(a):
+        lx = [random.randrange(2, 15, 1) for _ in range(b)]
+        l1.append(lx)
+    return l1
+print(func41(2,5))
+l = []
+def func42 (a,b):
+    for i in range(a):
+        l.append([random.randrange(2, 15, 1) for _ in range(b)])
+    return l
+print(func42(3,2))
+
+def func43(list):
+    n = list[0][0]
+    m = list[0][0]
+    for i in range(len(list)):
+        for j in range(len(list[i])):
+            if(n < list[i][j]):
+                n = list[i][j]
+            if(m>list[i][j]):
+                m = list[i][j]
+    a = [m,n]
+    return a
+print(func43(l))
+
+
+
+
+
+def func44(list):
+    a = []
+    n = 0
+    for i in range(len(list)):
+        n = list[i][0]
+        for j in range(1,len(list[i])):
+            if(n<list[i][j]):
+                n = list[i][j]
+        a.append(n)
+    return a
+
+print(func44([[1,3,2,5,7,0],[6,3,4,2,0],[2,3,4,0,6,8],[2,3,3,0,6,1]]))
+
+def func45(list):
+    a = []
+    n = 0
+    for i in range(len(list)):
+        n = list[0][i]
+        for j in range(1, len(list[i])):
+            if (n < list[j][i]):
+                n = list[j][i]
+        a.append(n)
+    return a
+
+print(func45([[2,5,7,6],
+ [8,8,13,5],
+ [9,11,4,8],
+ [8,6,12,5]]))
+
+def func46(list):
+    m = list[0][0]
+    pos = [0,0]
+    for i in range(len(list)):
+        for j in range(len(list[i])):
+            if(m < list[i][j]):
+                m = list[i][j]
+                pos[0] = i
+                pos[1] = j
+    list[pos[0]][pos[1]] = 0
+    return list
+
+print(func46([[2,5,7,6],
+ [8,8,13,5],
+ [9,11,4,8],
+ [8,6,12,5]]))
+
+def func47(list):
+    for i in range(len(list)):
+        for j in range(len(list[i])):
+            if(i == 0 or i == len(list)-1 or j == 0 or j == len(list[i])-1):
+                list[i][j] = 1
+            else:
+                list[i][j] = 0
+    return list
+
+print(func47([[2,5,7,6],
+ [8,8,13,5],
+ [9,11,4,6],
+ [8,6,12,5]]))
+
+def func48(list):
+    n = 0
+    m = 0
+    max1 = 0
+    for i in range(len(list)):
+        for j in range(len(list[i])):
+            m = 0
+            for k in range(len(list)):
+                for x in range(len(list[k])):
+                    if(list[i][j] == list[k][x] ):
+                        m += 1
+                        if(n < m):
+                            max1 = list[k][x]
+                            n = m
+
+    return max1
+
+print(func48([[2,5,7,6],
+ [8,8,13,5],
+ [9,11,6,8],
+ [6,5,12,6]]))
+
+def func49(list,a,b):
+    v = []
+    for i in range(len(list[a])):
+        v.append(list[a][i])
+        list[a][i] = list[b][i]
+        list[b][i] = v[i]
+    return list
+
+print(func49([[2,5,7,6],
+ [8,8,13,5],
+ [9,11,4,8],
+ [8,6,12,5]],0,2))
+
+def func50(list,a,b):
+    v = []
+    for i in range(len(list)):
+        v.append(list[i][a])
+        list[i][a] = list[i][b]
+        list[i][b] = v[i]
+    return list
+
+print(func50([[2,5,7,6],
+              [8,8,13,5],
+              [9,11,4,8],
+              [8,6,12,5]] ,1, 2))
+
+def func51(list,list2):
+    a = len(list) - len(list2)
+    for i in range(len(list2)):
+        if(len(list) == len(list2)):
+            list[i] = list[i]*list2[i]
+            return list
+        else:
+            list.append(list2[i])
+            return list,abs(a)
+
+
+
+print(func51([1,2,3,9],[1,2,3]))
+
+
+def func52(list):
+    a = []
+    n = 0
+    m = 0
+    z = 0
+    for i in range(len(list)):
+        for j in range(len(list[i])):
+            n = 0
+            for k in range(len(list[j])):
+                if(list[j][k] == 0):
+                    n += 1
+                    if(m<n):
+                        m = n
+                        z = j
+        if(i != z):
+            a.append(list[i])
+    return a
+
+
+
+
+print(func52([[1,0,3,3],[0,3,0,4],[1,2,5,4],[1,2,3,4]]))
+
+
+def func53(list):
+    S = ""
+    frequency = {}
+    if(type(list) == str):
+        tuple = ()
+        for i in list:
+            if i in frequency:
+                frequency[i] += 1
+            else:
+                frequency[i] = 1
+        list1 = [(v, k) for k, v in frequency.items()]
+        for i in list1:
+            tuple += (i,)
+        return tuple
+    else:
+        for i in list:
+            for j in range(i[0]):
+                S += i[1]
+        return S
+
+print(func53(
+[(1, 'h'), (4, 'a'), (3, 'h')]))
+
+def func54(tuple):
+    answer = 1
+    for i in tuple:
+        answer *= frac(i[0], i[1])
+    return answer
+
+print(func54(((2,2),(1,2),(1,2))))
+
+def func55(cart,prices):
+    return sum(cart[k]*prices[k] for k in cart)
+print(func55(prices = {'apple': 0.7, 'egg': 0.5,'cola': 2, 'mango': 5},
+cart = {'apple': 2, 'egg': 10, 'mango': 3}))
