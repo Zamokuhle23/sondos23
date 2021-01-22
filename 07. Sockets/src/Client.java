@@ -5,10 +5,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 
-/**
- *
- * @author SHUBHAM
- */
 public class Client {
 
     public static void main(String args[]) throws Exception
