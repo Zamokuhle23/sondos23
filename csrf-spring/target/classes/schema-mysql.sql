@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS student;
+
+CREATE TABLE student (
+  studId VARCHAR(10) NOT NULL,
+  studName VARCHAR(100) NOT NULL
+);
