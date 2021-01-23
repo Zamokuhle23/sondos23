@@ -1,0 +1,33 @@
+01. Реализовать Thread Pool
+https://github.com/Zamokuhle23/sondos23/tree/master/threadpool
+
+02. JAR-приложения для многопоточной загрузки
+https://github.com/Zamokuhle23/sondos23/tree/master/imagedownloader/jars
+
+03. Реализлвать Maven-проект для многопоточной загрузки
+https://github.com/Zamokuhle23/sondos23/tree/master/mavin-a
+
+04. Реализовать SimpleJdbcTemplate
+https://github.com/Zamokuhle23/sondos23/tree/master/SimpleServelet
+
+05. Логирование и примитивная безопасность
+https://github.com/Zamokuhle23/sondos2/tree/master/Webapp-sondos-0.1/WEB-INF
+
+06. PasswordEncoder feat. HttpSession
+https://github.com/Zamokuhle23/sondos23/tree/master/HttpsessionAndEncoder/login
+
+07. Реализовать EntityManage
+https://github.com/Zamokuhle23/sondos23/tree/master/entityMananger
+
+08. Сделать Web-приложение со страницами на Freemarker (2-3) страницы
+https://github.com/Zamokuhle23/sondos23/tree/master/Freemarker
+
+09. Sockets
+https://github.com/Zamokuhle23/sondos23/tree/master/07.%20Sockets
+
+10. Сделать AnnotationProcessing
+https://github.com/Zamokuhle23/sondos23/tree/master/freemarker%26connotations
+
+11. CSRF и постоянное хранилище сессий
+https://github.com/Zamokuhle23/sondos23/tree/master/csrf-spring
+
