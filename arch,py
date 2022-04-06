@@ -1,14 +1,22 @@
 import copy
+
+count = 0
+
 def combinations(target, data):
-for i in range(len(data)):
- new_target = copy.copy(target)
-   new_data = copy.copy(data)
-   new_target.append(data[i])
-   new_data = data[i + 1:]
-   scent.append(new_target)
-   combinations(new_target, new_data)
-   
-   
+    global count
+    if len(data) == 0 and count == 0:
+        scent.append(1)
+    else:
+        count=+1
+        for i in range(len(data)):
+            new_target = copy.copy(target)
+            new_data = copy.copy(data)
+            new_target.append(data[i])
+            new_data = data[i + 1:]
+            scent.append(new_target)
+            combinations(new_target, new_data)
+
+
 target = []
 scent = []
 flowers = ['a', 'b', 'c', 'd']
